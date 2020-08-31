@@ -18,8 +18,9 @@ namespace _02.UsingDataBase
 		public MainForm()
 		{
 			InitializeComponent();
-			this.Location = new Point(Screen.AllScreens[1].Bounds.Width / 2 - this.Size.Width / 2
-				, Screen.AllScreens[1].Bounds.Height / 2 - this.Size.Height / 2);
+			// 폼 실행시 화면 가운데 위치
+			//this.Location = new Point(Screen.AllScreens[1].Bounds.Width / 2 - this.Size.Width / 2
+			//	, Screen.AllScreens[1].Bounds.Height / 2 - this.Size.Height / 2);
 		}
 
 		#region 이벤트 핸들러 영역
@@ -70,12 +71,14 @@ namespace _02.UsingDataBase
 			ShowFormControl(form, "도서 관리");
 		}
 
+		// 바의 도서멤버관리를 클릭한 경우
 		private void MnuItemMemberTbl_Click(object sender, EventArgs e)
 		{
 			MemberMngForm form = new MemberMngForm();
 			ShowFormControl(form, "도서멤버 관리");
 		}
 
+		// 바의 렌탈관리를 클릭한 경우
 		private void MnuItemRentalMng_Click(object sender, EventArgs e)
 		{
 			RentalMngForm form = new RentalMngForm();
@@ -85,7 +88,7 @@ namespace _02.UsingDataBase
 
 		private void ShowFormControl(Form form, string title)
 		{
-			// Mdi를 사용하는 경우
+			// Mdi를 사용하는 경우(폼 안의 폼)
 			// DivMngForm의 작업 공간이 MainForm이므로 MdiParent를 사용하고 this로 값 지정.
 			form.MdiParent = this;
 			form.Text = title;

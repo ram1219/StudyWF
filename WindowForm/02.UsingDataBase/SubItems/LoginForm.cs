@@ -90,7 +90,7 @@ namespace _02.UsingDataBase.SubItems
 						TxtUserID.Focus();
 						return;
 					}
-					// 읽어온 값 중 userID의 값이 null 이 아니면 문자열로 변환
+					// 읽어온 값 중 userID의 값이 null 이 아니면 문자열로 변환 (admin, 12345)
 					resultId = reader["userID"] != null ? reader["userID"].ToString() : string.Empty;
 					Commons.USERID = resultId;
 					MetroMessageBox.Show(this, $"로그인성공 : {resultId}");					
